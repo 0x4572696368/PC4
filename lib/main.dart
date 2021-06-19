@@ -120,7 +120,7 @@ class _MyAppState extends State<MyApp> {
     return SizedBox(
       height: 100,
       child: Card(
-        elevation: 4,
+        elevation: 1,
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Row(
@@ -129,8 +129,7 @@ class _MyAppState extends State<MyApp> {
                 width: 100,
                 child: Image.asset(
                   img,
-                  width: 100,
-                  height: 100,
+                  height: 55,
                 ),
               ),
               Expanded(
@@ -139,7 +138,7 @@ class _MyAppState extends State<MyApp> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(title, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+                      Text(title, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
                       SizedBox(height: 5),
                       Row(
                         children: [
@@ -149,7 +148,7 @@ class _MyAppState extends State<MyApp> {
                           ),
                           RatingBar.builder(
                             itemSize: 14,
-                            initialRating: 3,
+                            initialRating: numRate,
                             minRating: 1,
                             direction: Axis.horizontal,
                             allowHalfRating: true,
@@ -170,7 +169,7 @@ class _MyAppState extends State<MyApp> {
               IconButton(
                 icon: const Icon(
                   Icons.more_vert_outlined,
-                  size: 30,
+                  size: 25,
                 ),
                 color: Colors.grey,
                 onPressed: () {},
@@ -195,11 +194,11 @@ class _MyAppState extends State<MyApp> {
                 children: [
                   Image.asset(
                     img,
-                    width: 50,
-                    height: 50,
+                    width: 40,
+                    height: 40,
                   ),
                   SizedBox(
-                    height: 5,
+                    height: 10,
                   ),
                   Text(
                     title,
@@ -304,7 +303,7 @@ class _MyAppState extends State<MyApp> {
       children: [
         Expanded(
             child: Text(
-          "favourites",
+          "FAVORITES",
           style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black, fontSize: 20),
         )),
         SizedBox(
@@ -336,7 +335,7 @@ class _MyAppState extends State<MyApp> {
         Expanded(
             child: Text(
           "ALL",
-          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black, fontSize: 30),
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black, fontSize: 25),
         )),
       ],
     );
@@ -354,7 +353,7 @@ class _MyAppState extends State<MyApp> {
       title: Center(
         child: Text(
           "Kudos",
-          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black, fontSize: 20),
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black, fontSize: 25),
         ),
       ),
       actions: <Widget>[
@@ -394,13 +393,11 @@ class _HeaderPainter extends CustomPainter {
     paint.color = Colors.grey.shade200;
     paint.style = PaintingStyle.fill;
     paint.strokeWidth = 5;
-
     final path = Path();
     path.moveTo(0, size.height * 0.4);
     path.lineTo(size.width, size.height * 0.33);
     path.lineTo(size.width, 0);
     path.lineTo(0, 0);
-
     canvas.drawPath(path, paint);
   }
 
