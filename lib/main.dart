@@ -50,11 +50,14 @@ class _MyAppState extends State<MyApp> {
                 Expanded(
                   flex: 10,
                   child: ListView(scrollDirection: Axis.vertical, children: <Widget>[
-                    listCard("assets/icons/dryer.png", "title", "4.3", 4.3),
-                    listCard("assets/icons/dryer.png", "title", "4.3", 4.3),
-                    listCard("assets/icons/dryer.png", "title", "4.3", 4.3),
-                    listCard("assets/icons/dryer.png", "title", "4.3", 4.3),
-                    listCard("assets/icons/dryer.png", "title", "4.3", 4.3),
+                    listCard("assets/icons/microwave-oven.png", "Microwave Oven", "4.3", 4.3),
+                    listCard("assets/icons/whisk.png", "Whisk", "3.3", 3.3),
+                    listCard("assets/icons/speakers.png", "Speakers", "4.6", 4.6),
+                    listCard("assets/icons/air-conditioner.png", "Air Conditioner", "5.0", 5.0),
+                    listCard("assets/icons/television.png", "Television", "5.0", 5.0),
+                    SizedBox(
+                      height: 85,
+                    )
                   ]),
                 ),
                 // Expanded(child: Text("Test"), flex: 10),
@@ -73,12 +76,14 @@ class _MyAppState extends State<MyApp> {
                             icon: Icon(
                               Icons.home_outlined,
                               color: Colors.black12,
+                              size: 35,
                             ),
                             title: Text('')),
                         BottomNavigationBarItem(
                             icon: Icon(
                               Icons.search_outlined,
                               color: Colors.black12,
+                              size: 35,
                             ),
                             title: Text('')),
                         BottomNavigationBarItem(
@@ -86,18 +91,21 @@ class _MyAppState extends State<MyApp> {
                             icon: Icon(
                               Icons.favorite_outline,
                               color: Colors.black12,
+                              size: 35,
                             ),
                             title: Text('')),
                         BottomNavigationBarItem(
                             icon: Icon(
                               Icons.message_outlined,
                               color: Colors.black12,
+                              size: 35,
                             ),
                             title: Text('')),
                         BottomNavigationBarItem(
                             icon: Icon(
                               Icons.person_outline,
                               color: Colors.black12,
+                              size: 35,
                             ),
                             title: Text('')),
                       ],
@@ -131,7 +139,7 @@ class _MyAppState extends State<MyApp> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(title),
+                      Text(title, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
                       SizedBox(height: 5),
                       Row(
                         children: [
