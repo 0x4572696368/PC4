@@ -64,66 +64,70 @@ class _MyAppState extends State<MyApp> {
                 // Expanded(child: Text("Test"), flex: 10),
               ]),
             ),
-            Align(
-                alignment: Alignment.bottomCenter,
-                child: Theme(
-                    data: Theme.of(context).copyWith(canvasColor: Colors.white),
-                    child: BottomNavigationBar(
-                      onTap: (i) {
-                        setState(() {
-                          index = i;
-                        });
-                      },
-                      showSelectedLabels: false,
-                      showUnselectedLabels: false,
-                      currentIndex: index,
-                      items: [
-                        BottomNavigationBarItem(
-                            activeIcon: Hex(Icons.home),
-                            icon: Icon(
-                              Icons.home_outlined,
-                              color: Colors.black12,
-                              size: 35,
-                            ),
-                            title: Text('')),
-                        BottomNavigationBarItem(
-                            activeIcon: Hex(Icons.search),
-                            icon: Icon(
-                              Icons.search_outlined,
-                              color: Colors.black12,
-                              size: 35,
-                            ),
-                            title: Text('')),
-                        BottomNavigationBarItem(
-                            activeIcon: Hex(Icons.favorite),
-                            icon: Icon(
-                              Icons.favorite_outline,
-                              color: Colors.black12,
-                              size: 35,
-                            ),
-                            title: Text('')),
-                        BottomNavigationBarItem(
-                            activeIcon: Hex(Icons.message),
-                            icon: Icon(
-                              Icons.message_outlined,
-                              color: Colors.black12,
-                              size: 35,
-                            ),
-                            title: Text('')),
-                        BottomNavigationBarItem(
-                            activeIcon: Hex(Icons.person),
-                            icon: Icon(
-                              Icons.person_outline,
-                              color: Colors.black12,
-                              size: 35,
-                            ),
-                            title: Text('')),
-                      ],
-                    ))),
+            bottonBar(context),
           ],
         ),
       ),
     );
+  }
+
+  Align bottonBar(BuildContext context) {
+    return Align(
+        alignment: Alignment.bottomCenter,
+        child: Theme(
+            data: Theme.of(context).copyWith(canvasColor: Colors.white),
+            child: BottomNavigationBar(
+              onTap: (i) {
+                setState(() {
+                  index = i;
+                });
+              },
+              showSelectedLabels: false,
+              showUnselectedLabels: false,
+              currentIndex: index,
+              items: [
+                BottomNavigationBarItem(
+                    activeIcon: Hex(Icons.home),
+                    icon: Icon(
+                      Icons.home_outlined,
+                      color: Colors.black12,
+                      size: 35,
+                    ),
+                    title: Text('')),
+                BottomNavigationBarItem(
+                    activeIcon: Hex(Icons.search),
+                    icon: Icon(
+                      Icons.search_outlined,
+                      color: Colors.black12,
+                      size: 35,
+                    ),
+                    title: Text('')),
+                BottomNavigationBarItem(
+                    activeIcon: Hex(Icons.favorite),
+                    icon: Icon(
+                      Icons.favorite_outline,
+                      color: Colors.black12,
+                      size: 35,
+                    ),
+                    title: Text('')),
+                BottomNavigationBarItem(
+                    activeIcon: Hex(Icons.message),
+                    icon: Icon(
+                      Icons.message_outlined,
+                      color: Colors.black12,
+                      size: 35,
+                    ),
+                    title: Text('')),
+                BottomNavigationBarItem(
+                    activeIcon: Hex(Icons.person),
+                    icon: Icon(
+                      Icons.person_outline,
+                      color: Colors.black12,
+                      size: 35,
+                    ),
+                    title: Text('')),
+              ],
+            )));
   }
 
   SizedBox listCard(String img, String title, String rate, double numRate) {
