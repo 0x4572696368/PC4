@@ -1,5 +1,8 @@
 # PC4 ERICH ECHEVARRIA
 
+![alt text](https://github.com/0x4572696368/PC4/blob/main/assets/img/photo.png?raw=true)
+
+
 [![Watch the video](https://github.com/0x4572696368/PC4/blob/main/assets/demo.mp4?raw=true)](https://github.com/0x4572696368/PC4/blob/main/assets/demo.mp4?raw=true)
 
 ## Getting Started
