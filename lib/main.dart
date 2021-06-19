@@ -367,7 +367,7 @@ class _MyAppState extends State<MyApp> {
       ),
       title: Center(
         child: Text(
-          "Kudos",
+          "KUDOS",
           style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black, fontSize: 25),
         ),
       ),
