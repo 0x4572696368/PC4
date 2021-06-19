@@ -9,6 +9,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  int index = 2;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -68,11 +69,17 @@ class _MyAppState extends State<MyApp> {
                 child: Theme(
                     data: Theme.of(context).copyWith(canvasColor: Colors.white),
                     child: BottomNavigationBar(
+                      onTap: (i) {
+                        setState(() {
+                          index = i;
+                        });
+                      },
                       showSelectedLabels: false,
                       showUnselectedLabels: false,
-                      currentIndex: 2,
+                      currentIndex: index,
                       items: [
                         BottomNavigationBarItem(
+                            activeIcon: Hex(Icons.home),
                             icon: Icon(
                               Icons.home_outlined,
                               color: Colors.black12,
@@ -80,6 +87,7 @@ class _MyAppState extends State<MyApp> {
                             ),
                             title: Text('')),
                         BottomNavigationBarItem(
+                            activeIcon: Hex(Icons.search),
                             icon: Icon(
                               Icons.search_outlined,
                               color: Colors.black12,
@@ -87,7 +95,7 @@ class _MyAppState extends State<MyApp> {
                             ),
                             title: Text('')),
                         BottomNavigationBarItem(
-                            activeIcon: Hex(),
+                            activeIcon: Hex(Icons.favorite),
                             icon: Icon(
                               Icons.favorite_outline,
                               color: Colors.black12,
@@ -95,6 +103,7 @@ class _MyAppState extends State<MyApp> {
                             ),
                             title: Text('')),
                         BottomNavigationBarItem(
+                            activeIcon: Hex(Icons.message),
                             icon: Icon(
                               Icons.message_outlined,
                               color: Colors.black12,
@@ -102,6 +111,7 @@ class _MyAppState extends State<MyApp> {
                             ),
                             title: Text('')),
                         BottomNavigationBarItem(
+                            activeIcon: Hex(Icons.person),
                             icon: Icon(
                               Icons.person_outline,
                               color: Colors.black12,
@@ -280,7 +290,7 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
-  Padding Hex() {
+  Padding Hex(IconData ic) {
     return Padding(
       padding: const EdgeInsets.all(4.0),
       child: Center(
@@ -289,7 +299,7 @@ class _MyAppState extends State<MyApp> {
             color: Color.fromRGBO(71, 92, 218, 1),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Icon(Icons.favorite),
+              child: Icon(ic),
             ),
           ),
           clipper: Hexagono(),
