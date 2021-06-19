@@ -50,14 +50,11 @@ class _MyAppState extends State<MyApp> {
                 Expanded(
                   flex: 10,
                   child: ListView(scrollDirection: Axis.vertical, children: <Widget>[
-                    listCard(),
-                    listCard(),
-                    listCard(),
-                    listCard(),
-                    listCard(),
-                    listCard(),
-                    listCard(),
-                    listCard(),
+                    listCard("assets/icons/dryer.png", "title", "4.3", 4.3),
+                    listCard("assets/icons/dryer.png", "title", "4.3", 4.3),
+                    listCard("assets/icons/dryer.png", "title", "4.3", 4.3),
+                    listCard("assets/icons/dryer.png", "title", "4.3", 4.3),
+                    listCard("assets/icons/dryer.png", "title", "4.3", 4.3),
                   ]),
                 ),
                 // Expanded(child: Text("Test"), flex: 10),
@@ -111,7 +108,7 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
-  SizedBox listCard() {
+  SizedBox listCard(String img, String title, String rate, double numRate) {
     return SizedBox(
       height: 100,
       child: Card(
@@ -123,7 +120,7 @@ class _MyAppState extends State<MyApp> {
               SizedBox(
                 width: 100,
                 child: Image.asset(
-                  "assets/icons/dryer.png",
+                  img,
                   width: 100,
                   height: 100,
                 ),
@@ -134,22 +131,31 @@ class _MyAppState extends State<MyApp> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("data"),
-                      RatingBar.builder(
-                        itemSize: 20,
-                        initialRating: 3,
-                        minRating: 1,
-                        direction: Axis.horizontal,
-                        allowHalfRating: true,
-                        itemCount: 5,
-                        itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
-                        itemBuilder: (context, _) => Icon(
-                          Icons.star,
-                          color: Colors.amber,
-                        ),
-                        onRatingUpdate: (rating) {
-                          print(rating);
-                        },
+                      Text(title),
+                      SizedBox(height: 5),
+                      Row(
+                        children: [
+                          Text(rate),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          RatingBar.builder(
+                            itemSize: 14,
+                            initialRating: 3,
+                            minRating: 1,
+                            direction: Axis.horizontal,
+                            allowHalfRating: true,
+                            itemCount: 5,
+                            itemPadding: EdgeInsets.symmetric(horizontal: 0.0),
+                            itemBuilder: (context, _) => Icon(
+                              Icons.star,
+                              color: Colors.amber,
+                            ),
+                            onRatingUpdate: (rating) {
+                              print(rating);
+                            },
+                          )
+                        ],
                       )
                     ],
                   )),
