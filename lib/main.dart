@@ -171,7 +171,7 @@ class _MyAppState extends State<MyApp> {
                             itemPadding: EdgeInsets.symmetric(horizontal: 0.0),
                             itemBuilder: (context, _) => Icon(
                               Icons.star,
-                              color: Colors.amber,
+                              color: Color.fromRGBO(71, 92, 218, 1),
                             ),
                             onRatingUpdate: (rating) {
                               print(rating);
@@ -278,7 +278,7 @@ class _MyAppState extends State<MyApp> {
                         itemPadding: EdgeInsets.symmetric(horizontal: 0.0),
                         itemBuilder: (context, _) => Icon(
                           Icons.star,
-                          color: Colors.amber,
+                          color: Color.fromRGBO(71, 92, 218, 1),
                         ),
                         onRatingUpdate: (rating) {
                           print(rating);
